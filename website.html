@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GemElectronics | Premium Devices & Showroom</title>
+    <!-- Favicon / Browser Tab Logo -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .header-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Navigation Bar (Fixed Sticking Position with Landing Page Flowing Underneath) -->
+    <header class="header-fixed shadow-sm">
+        <div class="bg-slate-900 text-slate-200 text-xs font-medium py-1.5 px-4 text-center tracking-wide">
+            <i class="fa-solid fa-store text-emerald-400 mr-2"></i> Authorized Flagship Showroom Catalogue | Instant WhatsApp Enquiries & Direct In-Store Pickup
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 text-emerald-400 flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-slate-900">Gem<span class="text-emerald-600">Electronics</span></span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#hero" class="hover:text-emerald-600 transition-colors">Home</a>
+                <a href="#categories" class="hover:text-emerald-600 transition-colors">Categories</a>
+                <a href="#products" class="hover:text-emerald-600 transition-colors">Full Catalogue</a>
+                <a href="#brands" class="hover:text-emerald-600 transition-colors">Brands</a>
+                <a href="#contact" class="hover:text-emerald-600 transition-colors">Showroom & Contact</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="https://wa.me/1234567890?text=Hello%20GemElectronics,%20I%20would%20like%20to%20inquire%20about%20your%20available%20products." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center space-x-2 transition-all shadow-md shadow-emerald-600/10">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Quick WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-slate-900 p-2 focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-[115px] left-0 right-0 bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl z-50">
+            <a href="#hero" class="mobile-link block text-slate-700 hover:text-emerald-600 font-semibold py-2 border-b border-slate-100">Home</a>
+            <a href="#categories" class="mobile-link block text-slate-700 hover:text-emerald-600 font-semibold py-2 border-b border-slate-100">Categories</a>
+            <a href="#products" class="mobile-link block text-slate-700 hover:text-emerald-600 font-semibold py-2 border-b border-slate-100">Full Catalogue</a>
+            <a href="#brands" class="mobile-link block text-slate-700 hover:text-emerald-600 font-semibold py-2 border-b border-slate-100">Brands</a>
+            <a href="#contact" class="mobile-link block text-slate-700 hover:text-emerald-600 font-semibold py-2">Showroom & Contact</a>
+            <div class="pt-3">
+                <a href="https://wa.me/1234567890?text=Hello%20GemElectronics,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="w-full bg-emerald-600 text-white py-3.5 rounded-xl font-semibold flex items-center justify-center space-x-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Quick WhatsApp Chat</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden pt-36 sm:pt-40 pb-20 bg-gradient-to-b from-slate-100 via-slate-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-emerald-800 text-xs font-bold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                        <span>Full Inventory Catalogue 2026</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        Premium Electronics & <span class="text-emerald-600">Flagship Gadgets</span>
+                    </h1>
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Browse over 40+ high-end smartphones, workstations, gaming consoles, audio gear, and smart home appliances. Tap any item to connect instantly with our showroom via WhatsApp.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
+                        <a href="#products" class="w-full sm:w-auto bg-slate-900 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-slate-900/10 hover:bg-slate-800 hover:scale-[1.02] transition-all text-center">
+                            Browse Catalogue (40+ Items)
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto bg-white text-slate-800 border border-slate-300 font-semibold px-8 py-4 rounded-xl hover:bg-slate-100 transition-all text-center">
+                            Visit Showroom
+                        </a>
+                    </div>
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-slate-900">40+</div>
+                            <div class="text-xs text-slate-500 font-medium">Flagship Devices</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-slate-900">Instant</div>
+                            <div class="text-xs text-slate-500 font-medium">WhatsApp Quotes</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-slate-900">Official</div>
+                            <div class="text-xs text-slate-500 font-medium">Warranty Support</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="relative bg-white rounded-3xl p-4 shadow-xl border border-slate-200">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="High-End Tech Setup" class="rounded-2xl object-cover w-full h-[320px] sm:h-[380px]">
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-slate-200 shadow-md flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-bold text-slate-900">Verified Warranty</div>
+                                        <div class="text-xs text-slate-500">Full manufacturer coverage</div>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 shrink-0">In Store</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section id="categories" class="py-16 sm:py-20 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs font-bold text-emerald-600 tracking-widest uppercase mb-3">Catalogue Directory</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Product Categories</h3>
+                <p class="text-slate-600 mt-2">Filter our inventory of 40+ hardware items across 5 core categories.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+                <button onclick="filterCategory('all')" class="category-btn bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 p-4 sm:p-6 rounded-2xl text-center group transition-all duration-200 active" data-category="all">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-2xl bg-slate-200 text-slate-700 flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800 block">All Items (40)</span>
+                </button>
+                <button onclick="filterCategory('smartphones')" class="category-btn bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 p-4 sm:p-6 rounded-2xl text-center group transition-all duration-200" data-category="smartphones">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-2xl bg-slate-200 text-slate-700 flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800 block">Smartphones</span>
+                </button>
+                <button onclick="filterCategory('laptops')" class="category-btn bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 p-4 sm:p-6 rounded-2xl text-center group transition-all duration-200" data-category="laptops">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-2xl bg-slate-200 text-slate-700 flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800 block">Laptops</span>
+                </button>
+                <button onclick="filterCategory('audio')" class="category-btn bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 p-4 sm:p-6 rounded-2xl text-center group transition-all duration-200" data-category="audio">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-2xl bg-slate-200 text-slate-700 flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800 block">Audio</span>
+                </button>
+                <button onclick="filterCategory('gaming')" class="category-btn bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 p-4 sm:p-6 rounded-2xl text-center group transition-all duration-200" data-category="gaming">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-2xl bg-slate-200 text-slate-700 flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800 block">Gaming</span>
+                </button>
+                <button onclick="filterCategory('smarthome')" class="category-btn bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 p-4 sm:p-6 rounded-2xl text-center group transition-all duration-200 col-span-2 sm:col-span-1" data-category="smarthome">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-2xl bg-slate-200 text-slate-700 flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-house-signal"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800 block">Smart Home</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section (40 Items) -->
+    <section id="products" class="py-16 sm:py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-12">
+                <div>
+                    <h2 class="text-xs font-bold text-emerald-600 tracking-widest uppercase mb-2">Extended Inventory</h2>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Full Product Catalogue (40 Items)</h3>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 mt-2 sm:mt-0 font-medium"><i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i> Tap "Enquire" to send item details directly to WhatsApp.</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="py-16 sm:py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-xs font-bold text-emerald-600 tracking-widest uppercase mb-3">Official Partners</h2>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-10 sm:mb-12">Top Brands We Carry</h3>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6">
+                <div class="bg-slate-50 border border-slate-200 py-5 sm:py-6 px-4 rounded-xl flex items-center justify-center text-slate-700 font-bold tracking-wider hover:border-emerald-500 transition-colors text-sm sm:text-base">
+                    <i class="fa-brands fa-apple text-xl sm:text-2xl mr-2"></i> APPLE
+                </div>
+                <div class="bg-slate-50 border border-slate-200 py-5 sm:py-6 px-4 rounded-xl flex items-center justify-center text-slate-700 font-bold tracking-wider hover:border-emerald-500 transition-colors text-sm sm:text-base">
+                    <i class="fa-brands fa-samsung text-xl sm:text-2xl mr-2"></i> SAMSUNG
+                </div>
+                <div class="bg-slate-50 border border-slate-200 py-5 sm:py-6 px-4 rounded-xl flex items-center justify-center text-slate-700 font-bold tracking-wider hover:border-emerald-500 transition-colors text-sm sm:text-base">
+                    <i class="fa-brands fa-playstation text-xl sm:text-2xl mr-2"></i> SONY
+                </div>
+                <div class="bg-slate-50 border border-slate-200 py-5 sm:py-6 px-4 rounded-xl flex items-center justify-center text-slate-700 font-bold tracking-wider hover:border-emerald-500 transition-colors text-sm sm:text-base">
+                    <i class="fa-solid fa-laptop-code text-lg sm:text-xl mr-2"></i> ASUS ROG
+                </div>
+                <div class="bg-slate-50 border border-slate-200 py-5 sm:py-6 px-4 rounded-xl flex items-center justify-center text-slate-700 font-bold tracking-wider hover:border-emerald-500 transition-colors text-sm sm:text-base">
+                    <i class="fa-solid fa-desktop text-lg sm:text-xl mr-2"></i> DELL XPS
+                </div>
+                <div class="bg-slate-50 border border-slate-200 py-5 sm:py-6 px-4 rounded-xl flex items-center justify-center text-slate-700 font-bold tracking-wider hover:border-emerald-500 transition-colors text-sm sm:text-base">
+                    <i class="fa-solid fa-tower-broadcast text-lg sm:text-xl mr-2"></i> JBL AUDIO
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact and Location Section -->
+    <section id="contact" class="py-16 sm:py-20 bg-slate-900 text-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs font-bold text-emerald-400 tracking-widest uppercase mb-3">Get In Touch</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Showroom & Location</h3>
+                <p class="text-slate-400 mt-2">Visit our flagship showroom for live hands-on testing and instant purchases.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <!-- Info Cards -->
+                <div class="space-y-6 flex flex-col justify-between">
+                    <div class="bg-slate-800 border border-slate-700 p-6 sm:p-8 rounded-3xl space-y-6 shadow-xl">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Showroom Address</h4>
+                                <p class="text-slate-300 text-sm mt-1">GemElectronics Flagship Store, Suite 402, Cyberjaya Digital Hub, 63000 Selangor, Malaysia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Operating Hours</h4>
+                                <p class="text-slate-300 text-sm mt-1">Monday – Saturday: 10:00 AM – 8:00 PM<br>Sunday: 12:00 PM – 6:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Direct Hotline</h4>
+                                <p class="text-slate-300 text-sm mt-1">+60 3-8888 9999 / +60 12-345 6789</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/1234567890?text=Hello%20GemElectronics,%20I%20would%20like%20to%20visit%20your%20showroom." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-2xl flex items-center justify-center space-x-3 transition-all shadow-lg shadow-emerald-600/20">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Chat with Showroom Manager</span>
+                    </a>
+                </div>
+
+                <!-- Map Placeholder Card -->
+                <div class="bg-slate-800 border border-slate-700 rounded-3xl p-3 overflow-hidden flex flex-col justify-center relative min-h-[350px]">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80')"></div>
+                    <div class="relative z-10 bg-slate-900/90 border border-slate-700 p-6 sm:p-8 rounded-2xl text-center max-w-md mx-auto shadow-xl">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Interactive Showroom Map</h4>
+                        <p class="text-slate-300 text-sm mt-2">Visit us in person to test our complete catalogue of phones, laptops, and audio gear. Free basement parking available.</p>
+                        <a href="https://maps.google.com" target="_blank" class="mt-6 inline-block bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl text-sm hover:bg-emerald-500 transition-colors">
+                            Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 text-center sm:text-left">
+            <div class="flex items-center space-x-2">
+                <div class="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-xs">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <span class="text-white font-bold">GemElectronics</span>
+            </div>
+            <div>
+                &copy; 2026 GemElectronics. All rights reserved. Direct WhatsApp Enquiry Catalogue (40 Items).
+            </div>
+            <div class="flex space-x-6 text-slate-300">
+                <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Product Loading & WhatsApp Enquiry Logic -->
+    <script>
+        // 40 Products (8 per category across 5 categories)
+        const products = [
+            // Smartphones (8 items)
+            { id: 1, name: "iPhone 15 Pro Max", category: "smartphones", price: 1199, image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80", badge: "Best Seller" },
+            { id: 2, name: "Samsung Galaxy S24 Ultra", category: "smartphones", price: 1299, image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80", badge: "New" },
+            { id: 3, name: "Google Pixel 9 Pro XL", category: "smartphones", price: 1099, image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80", badge: "Hot" },
+            { id: 4, name: "OnePlus 12 5G", category: "smartphones", price: 799, image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 5, name: "Xiaomi 14 Ultra", category: "smartphones", price: 999, image: "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
+            { id: 6, name: "Sony Xperia 1 VI", category: "smartphones", price: 1199, image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 7, name: "iPhone 15 Standard", category: "smartphones", price: 799, image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 8, name: "Samsung Galaxy Z Fold 5", category: "smartphones", price: 1799, image: "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80", badge: "Featured" },
+
+            // Laptops (8 items)
+            { id: 9, name: "MacBook Pro 16\" M3", category: "laptops", price: 2499, image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80", badge: "New" },
+            { id: 10, name: "Dell XPS 15 OLED", category: "laptops", price: 1799, image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80", badge: "Popular" },
+            { id: 11, name: "ASUS ROG Zephyrus G16", category: "laptops", price: 2199, image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=600&q=80", badge: "Hot" },
+            { id: 12, name: "Lenovo ThinkPad X1 Carbon", category: "laptops", price: 1599, image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 13, name: "Microsoft Surface Laptop 7", category: "laptops", price: 1299, image: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 14, name: "Razer Blade 16 Gaming", category: "laptops", price: 2899, image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80", badge: "Best Seller" },
+            { id: 15, name: "HP Spectre x360 14", category: "laptops", price: 1399, image: "https://images.unsplash.com/photo-1515940175183-6798529cb860?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 16, name: "MacBook Air 15\" M3", category: "laptops", price: 1499, image: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
+
+            // Audio (8 items)
+            { id: 17, name: "Sony WH-1000XM5", category: "audio", price: 399, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80", badge: "Best Seller" },
+            { id: 18, name: "AirPods Pro (2nd Gen)", category: "audio", price: 249, image: "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?auto=format&fit=crop&w=600&q=80", badge: "Popular" },
+            { id: 19, name: "Bose QuietComfort Ultra", category: "audio", price: 429, image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 20, name: "Sennheiser Momentum 4", category: "audio", price: 349, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 21, name: "JBL Flip 6 Waterproof", category: "audio", price: 129, image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
+            { id: 22, name: "Marshall Stanmore III", category: "audio", price: 379, image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 23, name: "Apple AirPods Max", category: "audio", price: 549, image: "https://images.unsplash.com/photo-1628202926206-c63a34b16b56?auto=format&fit=crop&w=600&q=80", badge: "Hot" },
+            { id: 24, name: "Beats Studio Pro", category: "audio", price: 349, image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80", badge: "" },
+
+            // Gaming (8 items)
+            { id: 25, name: "PlayStation 5 Console", category: "gaming", price: 499, image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=600&q=80", badge: "Best Seller" },
+            { id: 26, name: "ROG Ally Gaming Handheld", category: "gaming", price: 699, image: "https://images.unsplash.com/photo-1612287233302-3f14065476a6?auto=format&fit=crop&w=600&q=80", badge: "Featured" },
+            { id: 27, name: "Xbox Series X Console", category: "gaming", price: 499, image: "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 28, name: "Nintendo Switch OLED", category: "gaming", price: 349, image: "https://images.unsplash.com/photo-1578303512597-81e6cc155b2e?auto=format&fit=crop&w=600&q=80", badge: "Popular" },
+            { id: 29, name: "Steam Deck OLED 1TB", category: "gaming", price: 649, image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=600&q=80", badge: "Hot" },
+            { id: 30, name: "Meta Quest 3 VR Headset", category: "gaming", price: 499, image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?auto=format&fit=crop&w=600&q=80", badge: "New" },
+            { id: 31, name: "Logitech G PRO X Superlight", category: "gaming", price: 159, image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 32, name: "Secretlab TITAN Evo Chair", category: "gaming", price: 549, image: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=600&q=80", badge: "" },
+
+            // Smart Home (8 items)
+            { id: 33, name: "Smart Home Hub Display", category: "smarthome", price: 129, image: "https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=600&q=80", badge: "Popular" },
+            { id: 34, name: "Amazon Echo Show 10", category: "smarthome", price: 249, image: "https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 35, name: "Philips Hue Smart Lighting Kit", category: "smarthome", price: 199, image: "https://images.unsplash.com/photo-1550985616-11812c81f65c?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
+            { id: 36, name: "Nest Learning Thermostat", category: "smarthome", price: 249, image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=600&q=80", badge: "" },
+            { id: 37, name: "Ring Video Doorbell Pro 2", category: "smarthome", price: 229, image: "https://images.unsplash.com/photo-1557324232-b8917d5c3dff?auto=format&fit=crop&w=600&q=80", badge: "Best Seller" },
+            { id: 38, name: "Dyson Purifier Hot+Cool", category: "smarthome", price: 699, image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80", badge: "Featured" },
+            { id: 39, name: "Roborock S8 Pro Ultra", category: "smarthome", price: 999, image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80", badge: "Hot" },
+            { id: 40, name: "Apple HomePod (2nd Gen)", category: "smarthome", price: 299, image: "https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=600&q=80", badge: "" }
+        ];
+
+        // Render Products function
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+            filtered.forEach(product => {
+                const badgeHtml = product.badge ? `<span class="absolute top-3 left-3 bg-emerald-600 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">${product.badge}</span>` : '';
+                
+                // WhatsApp enquiry URL generator with pre-filled message
+                const whatsappMessage = encodeURIComponent(`Hello GemElectronics, I would like to enquire about this product:\n\n*${product.name}*\nPrice: $${product.price}\n\nPlease let me know its availability.`);
+                const whatsappUrl = `https://wa.me/1234567890?text=${whatsappMessage}`;
+
+                const card = document.createElement('div');
+                card.className = "bg-white border border-slate-200 rounded-2xl overflow-hidden flex flex-col justify-between group shadow-sm hover:shadow-md hover:border-emerald-500 transition-all duration-200";
+                card.innerHTML = `
+                    <div class="relative overflow-hidden h-52 bg-slate-100">
+                        ${badgeHtml}
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <span class="text-xs uppercase font-bold text-emerald-600 tracking-wider">${product.category}</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-1">${product.name}</h4>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+                            <div>
+                                <span class="text-xs text-slate-400 block font-medium">Retail Price</span>
+                                <span class="text-xl font-extrabold text-slate-900">$${product.price}</span>
+                            </div>
+                            <a href="${whatsappUrl}" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold flex items-center space-x-1.5 shadow-sm transition-all">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span>Enquire</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Category Filter Logic
+        function filterCategory(category) {
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                if(btn.getAttribute('data-category') === category) {
+                    btn.classList.add('border-emerald-500', 'bg-emerald-50');
+                } else {
+                    btn.classList.remove('border-emerald-500', 'bg-emerald-50');
+                }
+            });
+            renderProducts(category);
+        }
+
+        // Mobile Menu Toggle & Auto Close on Click
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking any mobile link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Initialize catalogue on load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts('all');
+            const defaultBtn = document.querySelector('[data-category="all"]');
+            if(defaultBtn) defaultBtn.classList.add('border-emerald-500', 'bg-emerald-50');
+        });
+    </script>
+</body>
+</html>
